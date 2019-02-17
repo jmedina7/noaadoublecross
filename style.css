@@ -1,13 +1,24 @@
 body {
     background-color: #f7f4e9;
-
+    font-family: 'Slabo 40px', serif;
+    
 }
+
 
 h1 {
     font-family: 'Libre Barcode 39 Text', cursive;
+    font-size: calc(1em + 2vw);
+    color: blue;
 }
 
-main {
-    font-family: 'Slabo 27px', serif;
+h2{
+    font-size: calc(1em + 1.5vw);
+}
 
+nav h2 {
+    color:blue;
+}
+
+p {
+    font-size: 20px;
 }
