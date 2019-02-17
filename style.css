@@ -1,3 +1,13 @@
 body {
     background-color: #f7f4e9;
+
+}
+
+h1 {
+    font-family: 'Libre Barcode 39 Text', cursive;
+}
+
+main {
+    font-family: 'Slabo 27px', serif;
+
 }

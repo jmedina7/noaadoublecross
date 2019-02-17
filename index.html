@@ -7,71 +7,94 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Noaa Doublecross Antenna</title>
     <script src="ahh.js"></script>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Libre+Barcode+39+Text|Slabo+27px" rel="stylesheet">
 </head>
 
 <body>
     <div class="container">
-    <header>
-        <h1>The NOAA Doublecross Antenna</h1>
-    </header>
-</div>
-<div class = "container">
-    <main>
-        <div>
+        <header>
+            <nav class="navbar navbar-light bg-light justify-content-between"">
+                        <a class=" navbar-brand" href="index.html">
+                <h1>The NOAA Doublecross Antenna</h1></a>
+                <a href="results.html">
+                    <h2>Project Results</h2>
+                </a>
+            </nav>
+        </header>
+    </div>
+    <div class="container">
+        <main>
             <h2>About our project</h2>
-            <p>We made an antenna to... The link to how to make it
-                The way it works... What it captures...</p>
-        </div>
-        <div>
-            <h2>Our Results</h2>
-            <p>The antenna recieves WAV files that ...(program name).. turns into images of....</p>
-            <ol>
-                <li>
-                    <h3>NOAA 18 2/16/2019 19:13</h3>
-                    <audio controls><source src="audio/NOAA18-LT02162019-1913.wav" type= "audio/wav"></audio>
-                    <img class="d-block w-100" src = "images/NOAA18-UTC02172019-001342-LT-02162019-191342.jpg" alt="First image">
-                </li>
-                <li>
-                    <h3>NOAA 15 2/16/2019 19:37</h3>
-                    <audio controls><source src="audio/NOAA15-LT02162019-1937.wav" type= "audio/wav"></audio>
-                        <img class="d-block w-100" src="images\NOAA15-UTC02172019-003737-LT02162019-193737.jpg" alt="Second Image">
-                </li>
-                <li>
-                    <h3>NOAA 18 2/16/2019 20:54</h3>
-                    <audio controls><source src="audio/NOAA19-LT02162019-2054.wav" type= "audio/wav"></audio>
-                        <img class="d-block w-100" src="images/NOAA18-UTC02172019-015447-LT020162019-205447.jpg" alt="Third image">
-                </li>
-                
-                <li>
-                    <h3>DATE AND TIME</h3>
-                    <audio controls><source src="" type= "audio/wav"></audio>
-                    <img>
-                </li>
-                <li>
-                    <h3>DATE AND TIME</h3>
-                    <audio controls><source src="" type= "audio/wav"></audio>
-                    <img>
-                </li>
+            <div>
+                <h3>What does it do?</h3>
+                <p>Our setup allows us to receive the signals in which weather satellites
+                    transmit, and record the audio which we hear. The WAV audio file is then
+                    resampled, decoded, and then produces JPG images of the area!</p>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/5xa0swHwXUE" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+            <div>
+                <h3>How we built it</h3>
+                <p>Our antenna is fashioned after a standard double-cross dipole antenna, with
+                    each dipole measuring ~19". This is near the ideal length to receive frequencies
+                    around 137MHz, which is where the US government's very own NOAA weather satellites
+                    transmit. This double cross design takes two pairs of dipoles with different length
+                    connections and effectively phases two signals onto each other. In theory, this
+                    should allow our antenna to operate omnidirectionally.</p>
 
+                <p>To build the antenna, I bought an software defined radio (SDR), which eliminates
+                    both the cost and bulk of a radio more typical to HAM radio operations. SDRs instead
+                    utilize software to control operating frequencies, gain, and many other functions
+                    rather than using built-in tuning mechanisms. Our radio comes from RTL, and software
+                    for this particular device was readily available to use. This radio has an impedance of
+                    50 ohms, so I bought some cheap 50 ohm coaxial cable from Amazon to go with it.</p>
+
+                <p>The harness itself is built from 3/4" PVC pipe, and holds the very shadily soldered
+                    connections between each arm. The dipoles themselves are made from measuring tape
+                    where ~1" of coating was sanded off for better connections with the coaxial cable.
+                    The vast majority of the antenna is held together with a total of more than half a roll of
+                    electrical tape.</p>
+            </div>
+            <div>
+                <h3>What's next for Satellite Imagery</h3>
+                <p>The next step in this project would be to create a sturdier and more permanent antenna. One of the
+                    biggest flaws with the antenna was how wobbly the harness was and how flimsy the connections
+                    between wires were. While I was still able to pull images from this set up, it is not suitable for
+                    operation in precipitation and a support even broke throughout the night.</p>
+                <p>With a studier antenna, I should be able to find a stronger signal more easily. Being able to
+                    receive stronger signals from NOAA satellites allows you to pull additional telemetry data and
+                    thermal images, in addition to receiving much higher resolution images. I should even be able to
+                    access the METEOR M2 satellite with a better antenna, which broadcasts a digital frequency and
+                    produces colored images.</p>
+                <p>Having a network of people pulling images from these satellites can allow for more creative
+                    results as well. For example, a composite image of Earth can be created with enough people and
+                    if consistent, can produce a sort of "citizen's Google Earth."</p>
+            </div>
+        </main>
+    </div>
+    <div class="container">
+        <footer>
+            <h2>Learn more about radio</h2>
+            <ol>
+                <li></li>
+                <li></li>
             </ol>
-        </div>
-    </main>
-</div>
-<div class = "container">
-    <footer>
-        <h2>Learn more about radio</h2>
-        <ol>
-            <li></li>
-            <li></li>
-        </ol>
-    </footer>
-</div>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        </footer>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
